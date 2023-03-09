@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula</title>
+</head>
+<body>
+
+    <script>
+        let nomes = ["Wilton de Paula Filho", "Maria Jose da Silva", "Ana Maria"];
+
+
+        const newElement = (e, content) => {
+            p = document.createElement(e);
+            p.innerHTML = `${content}`;
+            document.body.appendChild(p);
+        };
+
+        const firstLastNames = vet => vet.forEach(e => {
+            vet2 = e.split(" ");
+            newElement("p",`${vet2[0]} ${vet2[vet2.length-1]}`);
+        });
+        newElement("p", "Nomes:")
+        firstLastNames(nomes);
+
+
+        let vetor1 = [10, 4, 8, 7, 1, 20];
+        let vetor2 = [0, 41, 13, 7, 1, 20];
+        let vetor3 = [21, 33, 43, 19, 87];
+
+
+        const valorImpares = vet => vet.filter(e => e%2);
+        const sum = vet => vet.reduce((res, e) => res+=e);
+
+        newElement("p", `Soma do vetor 1 = ${sum(valorImpares(vetor1))}`);
+        newElement("p", `Soma do vetor 2 = ${sum(valorImpares(vetor2))}`);
+        newElement("p", `Soma do vetor 3 = ${sum(valorImpares(vetor3))}`);
+        
+
+    </script>
+</body>
+</html>
